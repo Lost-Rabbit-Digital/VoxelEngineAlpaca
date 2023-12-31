@@ -12,6 +12,7 @@ class VoxelEngine:
         pg.display.gl_set_attribute(pg.GL_DEPTH_SIZE, 24)
 
         pg.display.set_mode(WIN_RES, flags=pg.OPENGL | pg.DOUBLEBUF)
+        pg.display.set_icon(WIN_ICON)
         self.ctx = mgl.create_context()
 
         self.ctx.enable(flags=mgl.DEPTH_TEST | mgl.CULL_FACE | mgl.BLEND)
@@ -27,7 +28,6 @@ class VoxelEngine:
         self.delta_time = self.clock.tick()
         self.time = pg.time.get_ticks() * 0.001
         pg.display.set_caption(f'Voxel Engine Alpaca - FPS: {self.clock.get_fps() :.0f}')
-        pg.display.set_icon(WIN_ICON)
         
     def render(self):
         self.ctx.clear(color=BG_COLOR)
