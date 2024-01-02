@@ -9,4 +9,18 @@ class QuadMesh(BaseMesh):
         self.ctx = app.ctx
         self.program = app.shader_program.quad
 
-    def 
+        self.vbo_format = '3f 3f'
+        self.attrs = ('in_position', 'in_color')
+        self
+
+    def get_vertex_data(self):
+        vertices = [
+            (0.5, 0.5, 0.0), (-0.5, 0.5, 0.0), (-0.5, -0.5, 0.0),
+            (0.5, 0.5, 0.0), (-0.5, -0.5, 0.0), (0.5, -0.5, 0.0)
+        ]
+        colors = [
+            (0, 1, 0), (1, 0, 0), (1, 1, 0)
+            (0, 1, 0), (1, 1, 0), (0, 0, 1)
+        ]
+        vertex_data = np.hstack([vertices, colors], dtype='float32')
+        return vertex_data
