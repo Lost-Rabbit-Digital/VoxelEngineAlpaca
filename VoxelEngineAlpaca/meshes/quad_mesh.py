@@ -11,7 +11,7 @@ class QuadMesh(BaseMesh):
 
         self.vbo_format = '3f 3f'
         self.attrs = ('in_position', 'in_color')
-        self
+        self.vao = self.get_vao()
 
     def get_vertex_data(self):
         vertices = [
