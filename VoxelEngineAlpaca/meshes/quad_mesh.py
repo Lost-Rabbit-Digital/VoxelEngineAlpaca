@@ -9,4 +9,4 @@ class QuadMesh(BaseMesh):
         self.ctx = app.ctx
         self.program = app.shader_program.quad
 
-    def
+    def 
