@@ -11,10 +11,14 @@ Alpaca is an open source voxel game engine written in Python and OpenGL.
 ### Installation
 
 1. Clone the repository: `git clone https://github.com/yourname/alpaca.git`
+2. Navigate to the main directory: `cd VoxelEngineAlpaca`
 2. Install dependencies: `pip install -r requirements.txt`
 
 ### Usage
 
-Run `python main.py` to start the game.
+Run `main.py` to start the game.
 
-Use WASD keys to move around and mouse to look around. 
+### Controls
+
+- W/A/S/D: Directional movement
+- Mouse: Camera movement
