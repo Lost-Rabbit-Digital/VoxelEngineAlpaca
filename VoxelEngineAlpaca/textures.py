@@ -9,6 +9,7 @@ class Textures:
 
         # Load the textures
         self.texture_0 = self.load('frame.png')
+        #self.texture_0 = self.load('frame_bubs.png')
 
         # Assign the texture unit
         self.texture_0.use(location=0)
