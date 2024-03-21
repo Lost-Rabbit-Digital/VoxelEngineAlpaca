@@ -5,10 +5,17 @@ import sys
 from shader_program import ShaderProgram
 from scene import Scene
 from player import Player
+from textures import Textures
 
 
 class VoxelEngine:
     def __init__(self):
+        # Fields to avoid syntax errors
+        self.textures = None
+        self.player = None
+        self.shader_program = None
+        self.scene = None
+
         pg.init()
         pg.display.gl_set_attribute(pg.GL_CONTEXT_MAJOR_VERSION, 3)
         pg.display.gl_set_attribute(pg.GL_CONTEXT_MINOR_VERSION, 3)
@@ -33,7 +40,7 @@ class VoxelEngine:
         self.on_init()
 
     def on_init(self):
-        # Instance of shader_program
+        self.textures = Textures(self)
         self.player = Player(self)
         self.shader_program = ShaderProgram(self)
         self.scene = Scene(self)
