@@ -10,13 +10,6 @@ from world import World
 
 class VoxelEngine:
     def __init__(self):
-        # Fields to avoid syntax errors
-        self.world = None
-        self.textures = None
-        self.player = None
-        self.shader_program = None
-        self.scene = None
-
         pg.init()
         pg.display.gl_set_attribute(pg.GL_CONTEXT_MAJOR_VERSION, 3)
         pg.display.gl_set_attribute(pg.GL_CONTEXT_MINOR_VERSION, 3)
@@ -41,14 +34,12 @@ class VoxelEngine:
         self.on_init()
 
     def on_init(self):
-        self.world = World(self)
         self.textures = Textures(self)
         self.player = Player(self)
         self.shader_program = ShaderProgram(self)
         self.scene = Scene(self)
 
     def update(self):
-        self.world.update()
         self.player.update()
         self.shader_program.update()
         self.scene.update()
