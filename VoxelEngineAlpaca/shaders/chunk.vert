@@ -32,6 +32,7 @@ vec3 hash31(float p) {
 
 
 void main() {
+    // By taking the remainder of gl_VertexID this will always get the ordinal number of the vertex
     int uv_index = gl_VertexID % 6  + (face_id & 1) * 6;
     uv = uv_coords[uv_indices[uv_index]];
     voxel_color = hash31(voxel_id);
