@@ -19,6 +19,7 @@ class Chunk:
         self.m_model = self.get_model_matrix()
         self.voxels: np.array = None
         self.mesh: ChunkMesh = None
+        self.is_empty = True
 
     # Get the model matrix of the chunk based on its coordinates in the world.
     def get_model_matrix(self):
@@ -33,8 +34,9 @@ class Chunk:
         self.mesh = ChunkMesh(self)
 
     def render(self):
-        self.set_uniform()
-        self.mesh.render()
+        if not self.is_empty:
+            self.set_uniform()
+            self.mesh.render()
 
     def build_voxels(self):
         # Empty chunk
@@ -54,4 +56,8 @@ class Chunk:
                 for y in range(local_height):
                     wy = y + cy
                     voxels[x + CHUNK_SIZE * z + CHUNK_AREA * y] = wy + 1
+
+        if np.any(voxels):
+            self.is_empty = False
+
         return voxels
