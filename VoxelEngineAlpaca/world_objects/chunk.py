@@ -12,9 +12,11 @@ from meshes.chunk_mesh import ChunkMesh
 # IDX = X + (SIZE * Z) + (AREA * Y)
 
 class Chunk:
-    def __init__(self, app):
-        self.app = app
-        self.voxels: np.array = self.build_voxels()
+    def __init__(self, world, position):
+        self.app = world.app
+        self.world = world
+        self.position = position
+        self.voxels: np.array = None
         self.mesh: ChunkMesh = None
         self.build_mesh()
 
