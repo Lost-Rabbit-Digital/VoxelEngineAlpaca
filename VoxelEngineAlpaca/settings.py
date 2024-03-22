@@ -32,7 +32,7 @@ FAR = 2000.0 # Far clipping plane
 PITCH_MAX = glm.radians(89) # Maximum allowed pitch
 
 # Player
-PLAYER_SPEED = 0.005
+PLAYER_SPEED = 0.05
 PLAYER_ROT_SPEED = 0.003 # Rotation speed
 PLAYER_POS = glm.vec3(CENTER_XZ, WORLD_H * CHUNK_SIZE, CENTER_XZ) # Position
 MOUSE_SENSITIVITY = 0.002
