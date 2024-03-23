@@ -8,8 +8,9 @@ class Textures:
         self.ctx = app.ctx
 
         # Load the textures
-        self.texture_0 = self.load('borderless.png')
-        #self.texture_0 = self.load('frame_bubs.png')
+        #self.texture_0 = self.load('borderless.png')
+        self.texture_0 = self.load('frame.png')
+        #self.texture_0 = self.load('test.png')
 
         # Assign the texture unit
         self.texture_0.use(location=0)
