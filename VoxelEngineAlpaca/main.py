@@ -30,6 +30,10 @@ class VoxelEngine:
         pg.event.set_grab(True)
         pg.mouse.set_visible(False)
 
+        # Set the custom icon
+        app_icon = pg.image.load('assets/alpaca.png')
+        pg.display.set_icon(app_icon)
+
         self.is_running = True
         self.on_init()
 
