@@ -47,6 +47,7 @@ class VoxelEngine:
         self.player.update()
         self.shader_program.update()
         self.scene.update()
+
         self.delta_time = self.clock.tick()
         self.time = pg.time.get_ticks() * 0.001
         pg.display.set_caption(f'Voxel Engine Alpaca - {self.clock.get_fps() :.0f} Frames Per Second')
@@ -60,6 +61,7 @@ class VoxelEngine:
         for event in pg.event.get():
             if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
                 self.is_running = False
+            self.player.handle_event(event=event)
 
     def run(self):
         while self.is_running:

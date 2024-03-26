@@ -12,6 +12,18 @@ class Player(Camera):
         self.mouse_controls()
         super().update()
 
+    # TODO: Change this to be left click to remove and right click to create voxels
+    def handle_event(self, event):
+        # Voxel interaction determined by mouse input
+        if event.type == pg.MOUSEBUTTONDOWN:
+            voxel_handler = self.app.scene.world.voxel_handler
+            #  Remove voxels with left mouse button
+            if event.button == 1:
+                voxel_handler.set_voxel()
+            #  Create voxels with right mouse button
+            if event.button == 3:
+                voxel_handler.switch_interaction_mode()
+
     # TODO: Optimise this code
     def mouse_controls(self):
         mouse_dx, mouse_dy = pg.mouse.get_rel()
