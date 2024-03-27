@@ -10,13 +10,14 @@ WIN_RES = glm.vec2(1600, 900)  # Window resolution
 MAX_RAY_DIST = 6  # Maximum distance of the ray cast measured in voxels
 
 # Chunk
-CHUNK_SIZE = 32
+CHUNK_SIZE = 48
 H_CHUNK_SIZE = CHUNK_SIZE // 2  # Height
 CHUNK_AREA = CHUNK_SIZE * CHUNK_SIZE
 CHUNK_VOL = CHUNK_AREA * CHUNK_SIZE  # Volume
+CHUNK_SPHERE_RADIUS = H_CHUNK_SIZE * math.sqrt(3)  # Radius of sphere around the chunk for frustum culling0
 
 # World
-WORLD_W, WORLD_H = 10, 3  # Width and Height
+WORLD_W, WORLD_H = 20, 2  # Width and Height
 WORLD_D = WORLD_W  # Depth
 WORLD_AREA = WORLD_W * WORLD_D
 WORLD_VOL = WORLD_AREA * WORLD_H  # Volume

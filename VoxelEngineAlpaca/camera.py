@@ -1,6 +1,6 @@
-import glm
-
 from settings import *
+from frustum import Frustum
+
 
 class Camera:
     def __init__(self, position, yaw, pitch):
@@ -16,6 +16,8 @@ class Camera:
         self.m_proj = glm.perspective(V_FOV, ASPECT_RATIO, NEAR, FAR)
         self.m_view = glm.mat4()
 
+        self.frustum = Frustum(self)
+
     def update(self):
         self.update_vectors()
         self.update_view_matrix()
@@ -26,7 +28,7 @@ class Camera:
     def update_vectors(self):
         self.forward.x = glm.cos(self.yaw) * glm.cos(self.pitch)
         self.forward.y = glm.sin(self.pitch)
-        self.forward.z = glm.sin( self.yaw) * glm.cos(self.pitch)
+        self.forward.z = glm.sin(self.yaw) * glm.cos(self.pitch)
 
         self.forward = glm.normalize(self.forward)
         self.right = glm.normalize(glm.cross(self.forward, glm.vec3(0, 1, 0)))
