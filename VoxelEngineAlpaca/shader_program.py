@@ -16,7 +16,8 @@ class ShaderProgram:
         # Pass the projection and identity model matrix from the player to the shader
         self.chunk['m_proj'].write(self.player.m_proj)
         self.chunk['m_model'].write(glm.mat4())
-        self.chunk['u_texture_0'] = 0
+        #self.chunk['u_texture_0'] = 0 # LEGACY: Used for coloured voxels instead of textures
+        self.chunk['u_texture_array_0'] = 1
 
         # Voxel marker
         self.voxel_marker['m_proj'].write(self.player.m_proj)

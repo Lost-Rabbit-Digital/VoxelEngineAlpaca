@@ -61,7 +61,8 @@ class Chunk:
 
                 for y in range(local_height):
                     wy = y + cy
-                    voxels[x + CHUNK_SIZE * z + CHUNK_AREA * y] = wy + 1  # Default world generation
+                    #voxels[x + CHUNK_SIZE * z + CHUNK_AREA * y] = wy + 1  # Default world generation
+                    voxels[x + CHUNK_SIZE * z + CHUNK_AREA * y] = 2  # Default world generation
                     #voxels[x + CHUNK_SIZE * z + CHUNK_AREA * y] = rng  # Each chunk has its own color
 
         if np.any(voxels):
