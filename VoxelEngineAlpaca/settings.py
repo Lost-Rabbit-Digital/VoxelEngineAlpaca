@@ -9,6 +9,26 @@ WIN_RES = glm.vec2(1600, 900)  # Window resolution
 # Ray casts
 MAX_RAY_DIST = 6  # Maximum distance of the ray cast measured in voxels
 
+# World generation
+SEED = 16
+
+# Textures
+AIR = 0
+SAND = 1
+GRASS = 2
+DIRT = 3
+STONE = 4
+SNOW = 5
+CHERRY_LEAVES = 6
+OAK_LOG = 7
+
+# Terrain levels
+SNOW_LEVEL = 54
+STONE_LEVEL = 49
+DIRT_LEVEL = 40
+GRASS_LEVEL = 8
+SAND_LEVEL = 7
+
 # Chunk
 CHUNK_SIZE = 48
 H_CHUNK_SIZE = CHUNK_SIZE // 2  # Height
@@ -42,4 +62,4 @@ PLAYER_POS = glm.vec3(CENTER_XZ, WORLD_H * CHUNK_SIZE, CENTER_XZ)  # Position
 MOUSE_SENSITIVITY = 0.002
 
 # Colors
-BG_COLOR = glm.vec3(0, 0.6, 0.6)  # Background color
+SKY_COLOR = glm.vec3(0.463, 0.706, 0.996)  # Sky color

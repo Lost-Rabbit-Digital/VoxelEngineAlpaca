@@ -53,7 +53,7 @@ class VoxelEngine:
         pg.display.set_caption(f'Voxel Engine Alpaca - {self.clock.get_fps() :.0f} Frames Per Second')
 
     def render(self):
-        self.ctx.clear(color=BG_COLOR)
+        self.ctx.clear(color=SKY_COLOR)
         self.scene.render()
         pg.display.flip()
 

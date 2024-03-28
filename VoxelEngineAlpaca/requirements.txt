@@ -5,3 +5,4 @@ numba==0.58.1
 numpy==1.26.2
 pygame==2.5.2
 PyGLM==2.7.1
+opensimplex==0.4.5
