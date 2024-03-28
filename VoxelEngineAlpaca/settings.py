@@ -12,6 +12,11 @@ MAX_RAY_DIST = 6  # Maximum distance of the ray cast measured in voxels
 # World generation
 SEED = 16
 
+# Tree settings
+TREE_PROBABILITY = 0.02
+TREE_WIDTH, TREE_HEIGHT = 4, 8
+TREE_H_WIDTH, TREE_H_HEIGHT = TREE_WIDTH // 2, TREE_HEIGHT // 2
+
 # Textures
 AIR = 0
 SAND = 1
@@ -19,7 +24,7 @@ GRASS = 2
 DIRT = 3
 STONE = 4
 SNOW = 5
-CHERRY_LEAVES = 6
+LEAVES = 6
 OAK_LOG = 7
 
 # Terrain levels

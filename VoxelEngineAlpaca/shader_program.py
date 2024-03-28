@@ -13,11 +13,11 @@ class ShaderProgram:
         self.set_uniforms_on_init()
 
     def set_uniforms_on_init(self):
-        # Pass the projection and identity model matrix from the player to the shader
+        # Chunk
         self.chunk['m_proj'].write(self.player.m_proj)
         self.chunk['m_model'].write(glm.mat4())
-        #self.chunk['u_texture_0'] = 0 # LEGACY: Used for coloured voxels instead of textures
         self.chunk['u_texture_array_0'] = 1
+        self.chunk['sky_color'].write(SKY_COLOR)
 
         # Voxel marker
         self.voxel_marker['m_proj'].write(self.player.m_proj)
