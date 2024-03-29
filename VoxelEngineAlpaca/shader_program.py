@@ -9,6 +9,7 @@ class ShaderProgram:
         # ----- Shaders ----- #
         self.chunk = self.get_program(shader_name='chunk')
         self.voxel_marker = self.get_program(shader_name='voxel_marker')
+        self.water = self.get_program('water')
         # ------------------- #
         self.set_uniforms_on_init()
 
@@ -18,16 +19,24 @@ class ShaderProgram:
         self.chunk['m_model'].write(glm.mat4())
         self.chunk['u_texture_array_0'] = 1
         self.chunk['sky_color'].write(SKY_COLOR)
+        self.chunk['water_line'] = WATER_LINE
 
         # Voxel marker
         self.voxel_marker['m_proj'].write(self.player.m_proj)
         self.voxel_marker['m_model'].write(glm.mat4())
         self.voxel_marker['u_texture_0'] = 0
 
+        # Water
+        self.water['m_proj'].write(self.player.m_proj)
+        self.water['u_texture_0'] = 2
+        self.water['water_area'] = WATER_AREA
+        self.water['water_line'] = WATER_LINE
+
     def update(self):
         # Pass the view matrix from the player to the shader
         self.chunk['m_view'].write(self.player.m_view)
         self.voxel_marker['m_view'].write(self.player.m_view)
+        self.water['m_view'].write(self.player.m_view)
 
     def get_program(self, shader_name):  # Pointer to OpenGL Context
         with open(f'shaders/{shader_name}.vert') as file:  # Grab the shader vert

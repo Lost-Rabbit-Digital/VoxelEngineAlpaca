@@ -1,0 +1,21 @@
+Features:
+    - Add player
+    - Water physics
+    - Lava
+    - Day/Night cycle
+    - UI
+        - Main menu
+        - Hot bar
+        - Settings menu
+
+Backend:
+    - Random seed generation
+    - Fix wild card imports
+    - Optimise code
+    - Create documentation
+        - https://www.sphinx-doc.org/en/master/tutorial/index.html
+        - sphinx_rtd_theme
+        - Add docstrings
+
+Bugs:
+    - Mouse clamping
