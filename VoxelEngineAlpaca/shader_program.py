@@ -10,6 +10,7 @@ class ShaderProgram:
         self.chunk = self.get_program(shader_name='chunk')
         self.voxel_marker = self.get_program(shader_name='voxel_marker')
         self.water = self.get_program('water')
+        self.clouds = self.get_program('clouds')
         # ------------------- #
         self.set_uniforms_on_init()
 
@@ -32,11 +33,18 @@ class ShaderProgram:
         self.water['water_area'] = WATER_AREA
         self.water['water_line'] = WATER_LINE
 
+        # Clouds
+        self.clouds['m_proj'].write(self.player.m_proj)
+        self.clouds['center'] = CENTER_XZ
+        self.clouds['sky_color'].write(SKY_COLOR)
+        self.clouds['cloud_scale'] = CLOUD_SCALE
+
     def update(self):
         # Pass the view matrix from the player to the shader
         self.chunk['m_view'].write(self.player.m_view)
         self.voxel_marker['m_view'].write(self.player.m_view)
         self.water['m_view'].write(self.player.m_view)
+        self.clouds['m_view'].write(self.player.m_view)
 
     def get_program(self, shader_name):  # Pointer to OpenGL Context
         with open(f'shaders/{shader_name}.vert') as file:  # Grab the shader vert
