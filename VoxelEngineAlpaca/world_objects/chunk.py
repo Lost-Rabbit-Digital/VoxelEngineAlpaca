@@ -1,6 +1,3 @@
-import random
-
-from settings import *
 from meshes.chunk_mesh import ChunkMesh
 from terrain_generation import *
 

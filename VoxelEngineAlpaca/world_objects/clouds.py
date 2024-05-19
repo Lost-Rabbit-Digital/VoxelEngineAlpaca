@@ -1,4 +1,3 @@
-from settings import *
 from meshes.cloud_mesh import CloudMesh
 
 

@@ -1,4 +1,3 @@
-from settings import *
 from meshes.quad_mesh import QuadMesh
 
 

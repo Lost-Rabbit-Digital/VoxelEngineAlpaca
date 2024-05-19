@@ -1,4 +1,3 @@
-from settings import *
 import moderngl as mgl
 from world import World
 from world_objects.voxel_marker import VoxelMarker
